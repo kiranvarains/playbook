@@ -1,0 +1,9 @@
+---
+-  hosts: pr
+   tasks:
+   - name: absent httpd
+     package: name=httpd state=absent 
+     name: absent vsftpd
+     package: name=vsftpd state=absent
+     name: absent finger
+     package: name=finger state=absent

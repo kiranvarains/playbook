@@ -1,0 +1,9 @@
+---
+-  hosts: pr
+   tasks:
+   - name: upgrade httpd
+     package: name=httpd state=latest 
+     name: upgrade vsftpd
+     package: name=vsftpd state=latest
+     name: upgrade finger
+     package: name=finger state=latest

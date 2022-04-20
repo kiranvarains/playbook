@@ -1,0 +1,9 @@
+---
+-  hosts: pr
+   tasks:
+   - name: Install httpd
+     package: name=httpd state=present 
+     name: Install vsftpd
+     package: name=vsftpd state=present
+     name: Inatall finger
+     package: name=finger state=present

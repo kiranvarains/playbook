@@ -1,0 +1,12 @@
+---
+- hosts: pr
+  become: yes
+  tasks: 
+   - name: copy the pre-checks scripts file
+     copy: src="/root/precks.sh" dest="/tmp/precks.sh"
+   - name: set permissions
+     file: path=/tmp/precks.sh mode=0755 owner=root group=root
+   - name: execute the scripts
+     shell: /bin/bash /tmp/precks.sh > /tmp/preckecks
+   - name: remove prechecks file after executed scripts file  
+     file: path=/tmp/precks.sh state=absent
